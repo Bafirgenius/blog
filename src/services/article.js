@@ -30,7 +30,6 @@ module.exports = {
         return await articleModel
           .find()
           .populate({path: "comments"})
-          .populate({ path: "cancelPayment", select: ["reason"] })
           .limit(limit)
           .skip((page - 1) * limit)
           .exec();
